@@ -1,0 +1,25 @@
+id,title,summary,body,last_updated,author,status,topic_id
+1,Sleeping under a treated net,,"Sleep under an insecticide-treated net every night to prevent malaria, especially children and pregnant women.",2025-01-04,A. Bello,published,1
+2,Malaria prevention,Simple steps to avoid malaria,"Use treated nets, clear stagnant water, and see a clinic early if you have fever.",2025-01-04,,published,1
+3,Clearing stagnant water,Mosquitoes breed in still water,Empty containers and clear gutters so mosquitoes cannot breed near your home.,2025-01-01,A. Bello,published,1
+4,Antenatal visits,Why to attend antenatal care,Attend antenatal check-ups at least four times during pregnancy to keep mother and baby healthy.,2024-11-30,N. Okoro,published,2
+5,Antenatal care,,Pregnant women should visit a clinic at least four times for check-ups.,2024-11-30,N. Okoro,published,2
+6,Eating well on a budget,Balanced meals with local foods,"Combine beans, vegetables, and grains for a balanced meal without spending much.",2025-02-10,,published,3
+7,,Iron-rich foods,Eat green leafy vegetables and beans to prevent anaemia.,2025-02-11,F. Yusuf,draft,3
+8,Wash your hands,Handwashing prevents disease,Wash your hands with soap and clean water before eating and after using the toilet.,2025-03-01,,published,5
+9,Handwashing,,Washing hands with soap and water before meals and after the toilet stops many infections.,2025-03-01,,published,5
+10,Safe drinking water,Make water safe to drink,Boil or treat water before drinking if you are not sure it is clean.,2025-03-15,I. Musa,published,6
+11,Typhoid and clean water,,Typhoid spreads through dirty water and food. Drink safe water and wash food well.,2025-03-15,I. Musa,published,6
+12,First aid for burns,What to do for a minor burn,Cool a minor burn under running water for about twenty minutes. Do not apply oil or toothpaste.,2025-04-02,Dr. Ade,published,4
+13,Choking help,,"For a choking adult, give firm back blows between the shoulder blades and call for help.",2025-04-02,Dr. Ade,published,4
+14,Vaccines for children,Keep to the vaccine schedule,Take your child for all routine vaccines on time to protect against serious diseases.,2025-04-20,,published,7
+15,Immunization schedule,,Follow the national immunization schedule from birth. Free at most public clinics.,2025-04-21,,published,7
+16,Family planning options,Spacing births safely,Talk to a health worker about safe options for spacing your children.,2025-05-05,G. Eze,published,8
+17,Fever in children,When fever is an emergency,"If a child has fever with fits, fast breathing or cannot drink, go to a clinic immediately.",2025-05-06,,published,1
+18,Breastfeeding basics,Breastfeed in the first hour,Start breastfeeding within the first hour of birth and feed only breast milk for six months.,2025-05-10,N. Okoro,published,2
+19,Diarrhoea and ORS,Treat diarrhoea with fluids,Give oral rehydration solution (ORS) and continue feeding a child with diarrhoea. Seek help if it does not stop.,2025-05-10,,published,5
+20,Malaria in pregnancy,,Pregnant women should sleep under a treated net and take the preventive medicine a clinic gives them.,,N. Okoro,published,1
+21,Healthy snacks for children,Better than sugary snacks,"Offer fruit, groundnuts or boiled eggs instead of sweets and soft drinks.",2025-06-01,F. Yusuf,published,3
+22,Clean cooking & smoke,Reduce cooking smoke,Cook in a well-ventilated place to reduce smoke that can harm the lungs.,2025-06-02,,published,3
+23,First aid kit at home,TODO: expand this,"Keep plasters, clean gauze, antiseptic and ORS at home.",2025-06-10,Dr. Ade,draft,4
+24,Washing hands,,Wash hands with soap. Especially before eating and after the toilet.,2025-06-11,,published,5
