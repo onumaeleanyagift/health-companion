@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.routes.articles import router as articles_router
 from app.routes.topics import router as topics_router
+from app.routes.ask import router as ask_router
 
 # Create the FastAPI application.
 app = FastAPI(
@@ -12,6 +13,7 @@ app = FastAPI(
 # Register the article and topic routes with the main application.
 app.include_router(articles_router)
 app.include_router(topics_router)
+app.include_router(ask_router)
 
 # Simple endpoint to confirm that the API is running.
 @app.get("/")
