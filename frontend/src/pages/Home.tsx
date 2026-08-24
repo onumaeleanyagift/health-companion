@@ -1,34 +1,53 @@
+import { useEffect, useState } from "react";
+import { getTopics } from "../services/api";
+import type { Topic } from "../types";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const [topics, setTopics] = useState<Topic[]>([]);
+  const [loadingTopics, setLoadingTopics] = useState(true);
+
+  useEffect(() => {
+    async function loadTopics() {
+      try {
+        const data = await getTopics();
+        setTopics(data);
+      } finally {
+        setLoadingTopics(false);
+      }
+    }
+
+    loadTopics();
+  }, []);
+
   return (
     <div className="space-y-16">
-      <section className="rounded-3xl bg-blue-700 px-6 py-16 text-white sm:px-10 lg:px-16">
+      <section className="rounded-3xl bg-blue-700 px-5 py-10 text-white sm:px-10 sm:py-14 lg:px-16 lg:py-16">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-wide text-blue-100">
             Health Information Companion
           </p>
 
-          <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 className="text-3xl font-bold leading-tight sm:text-5xl">
             Simple health information you can understand and use.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-100">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-blue-100 sm:mt-6 sm:text-lg sm:leading-8">
             Get clear health information on everyday topics and ask questions
             using our health content.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <Link
               to="/topics"
-              className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50"
+              className="rounded-lg bg-white px-5 py-3 text-center text-sm font-semibold text-blue-700 hover:bg-blue-50"
             >
               Explore Topics
             </Link>
 
             <Link
               to="/ask"
-              className="rounded-lg border border-blue-300 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-600"
+              className="rounded-lg border border-blue-300 px-5 py-3 text-center text-sm font-semibold text-white hover:bg-blue-600"
             >
               Ask a Health Question
             </Link>
@@ -37,7 +56,7 @@ function Home() {
       </section>
 
       <section>
-        <div className="mb-6 flex items-end justify-between">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-medium text-blue-700">Health Topics</p>
 
@@ -55,33 +74,23 @@ function Home() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-slate-900">Malaria</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Prevention and everyday malaria information.
-            </p>
-          </div>
+          {loadingTopics ? (
+            <p className="text-slate-600">Loading topics...</p>
+          ) : (
+            topics.slice(0, 4).map((topic) => (
+              <Link
+                key={topic.id}
+                to={`/topics/${topic.id}`}
+                className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-blue-300 hover:shadow-sm"
+              >
+                <h3 className="font-semibold text-slate-900">{topic.name}</h3>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-slate-900">Maternal Health</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Information for pregnancy and maternal care.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-slate-900">Nutrition</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Practical information about healthy eating.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
-            <h3 className="font-semibold text-slate-900">First Aid</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Basic guidance for common first-aid situations.
-            </p>
-          </div>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  View health information about {topic.name.toLowerCase()}.
+                </p>
+              </Link>
+            ))
+          )}
         </div>
       </section>
 

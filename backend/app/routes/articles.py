@@ -77,7 +77,7 @@ def get_articles(article_id: int, language: str = Query("en")):
     response = (
         supabase
         .table("articles")
-        .select("id, title, summary, body, last_updated, author, "
+        .select("id, topic_id, title, summary, body, last_updated, author, "
         "topic:topics(name)")
         .eq("id", article_id)
         .eq("status", "published")
