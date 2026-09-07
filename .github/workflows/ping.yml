@@ -10,5 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping backend
-        run: curl -f https://health-companion-9jwc.onrender.com || exit 1
+      - name: Ping Health Companion Frontend
+        run: curl -f https://frontend-seven-alpha-17.vercel.app/ || exit 1
+
+      - name: Ping Health Companion Backend
+        run: curl -f https://health-companion-9jwc.onrender.com/ || exit 1
